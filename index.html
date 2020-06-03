@@ -11,8 +11,8 @@
 
     <title>Hello, world!</title>
     <link rel="stylesheet" href="style.css">
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed36c34a75a50dd"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed36c34a75a50dd"></script>
 
 </head>
 
@@ -47,8 +47,10 @@
     </section>
     <section class="youtube">
         <div class="container mt-5 mr-3 youtube-cover d-flex flex-row-reverse">
-            <a href="" class="youtube-link">by 01_0614</a>
-            <img src="" alt="" class="youtube-icon">
+            <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" target="_blank">
+                <span class="youtube-link">by LJS</span>
+                <br><br><span class="youtube-link-2">제작 도움 : 조코딩 유튜브</span>
+            </a>
         </div>
     </section>
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -73,10 +75,9 @@
             <p class="result-message"></p>
             <div id="label-container"></div>
 
-                <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <div class="addthis_inline_share_toolbox"></div>
-            
-            
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div class="addthis_inline_share_toolbox"></div>
+
             <div class="image-title-wrap">
                 <button type="button" onclick="removeUpload()" class="remove-image">
                     <span>다른 사진으로 재시도</span>
@@ -127,7 +128,7 @@
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
     <script type="text/javascript">
         // More API functions here:
         // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
@@ -248,7 +249,7 @@
             var celeb = "<div class='" + prediction[0].className + "-MBTI-celeb pt-2 pb-2'>" + resultCeleb + "</div>"
             $('.result-message').html(title + explain + celeb);
             var barwidth;
-            for (let i = 0; i < maxPredictions; i++) {
+            for (let i = 0; i < 5; i++) {
                 if (prediction[i].probability.toFixed(2) > 0.1) {
                     barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
                 } else if (prediction[i].probability.toFixed(2) >= 0.01) {
