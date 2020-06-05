@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
     background-color: #ffffff;
 }
 
@@ -45,8 +45,8 @@ body {
     text-align: center;
 }
 #loading {
-  display: none;
-} 
+    display: none;
+}
 
 .file-upload-input {
     position: absolute;
@@ -87,7 +87,6 @@ body {
 .drag-text h3 {
     width: 50%;
     font-weight: 100;
-    font-family: NanumSquareR;
     font-size: 2rem;
     line-height: 1.53;
     text-align: center;
@@ -103,17 +102,17 @@ body {
 }
 
 .try-again-btn {
-  border-radius: 40px;
-  border: solid 1.5px #35465d;
-  background-color: #35465d;
+    border-radius: 40px;
+    border: solid 1.5px #35465d;
+    background-color: #35465d;
 }
 
 .try-again-text {
-  display: block;
-  font-size: 1.5rem;
-  text-align: center;
-  color: #ffffff;
-  padding: 4px 15px;
+    display: block;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #ffffff;
+    padding: 4px 15px;
 }
 
 .remove-image {
@@ -128,7 +127,6 @@ body {
     transition: all 0.2s ease;
     outline: none;
     text-transform: uppercase;
-    font-weight: 700;
 }
 
 .remove-image:hover {
@@ -148,16 +146,15 @@ body {
 }
 
 .navbar-brand {
-    font-family: NanumSquareR;
     line-height: 1.68;
     text-align: left;
     color: #35465d;
 }
 
 .navbar-light .navbar-brand {
-  line-height: 1.68;
-  text-align: left;
-  color: #35465d;
+    line-height: 1.68;
+    text-align: left;
+    color: #35465d;
 }
 
 .navbar-light .navbar-toggler {
@@ -169,14 +166,12 @@ body {
 }
 
 .title {
-    font-family: NanumSquareR;
     line-height: 1.67;
     text-align: center;
     color: #35465d;
 }
 
 .subtitle {
-    font-family: NanumSquareR;
     line-height: 1.53;
     text-align: center;
     color: #35465d;
@@ -195,16 +190,14 @@ body {
 }
 
 .youtube-link {
-    font-family: NanumSquareR;
     font-size: 1.3rem;
     line-height: 1.1;
-    
+
     color: #35465d;
     text-decoration: underline;
 }
 
 .youtube-link:hover {
-    font-family: NanumSquareR;
     font-size: 1.3rem;
     line-height: 1.1;
     color: #35465d;
@@ -212,7 +205,6 @@ body {
 }
 
 .youtube-link-2 {
-    font-family: NanumSquareR;
     font-size: 1rem;
     line-height: 1.51;
     text-align: right;
@@ -225,38 +217,27 @@ body {
 
 .upload-text {
     font-weight: 100;
-    font-family: NanumSquareR;
     font-size: 8px;
     line-height: 1.53;
     text-align: center;
     color: #35465d;
 }
 
-.bar-container {
-    height: 2.7rem;
+.file-upload-image {
+    max-height: 60%;
+    max-width: 60%;
+    margin: auto;
+    padding: 10px;
 }
 
--box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2rem;
-  border-radius: 10px;
-  width: 100%;
-  background-color: rgba(117, 204, 84, 0.2);
-}
-.INFP-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2rem;
-  border-radius: 10px;
-  background-color: rgba(117, 204, 84, 1);
+.bar-container {
+    height: 2.7rem;
+    margin: 0 5px;
 }
 
 .percent-text {
-  font-size: 1rem;
-  color: #ffffff;
+    font-size: 1rem;
+    color: #ffffff;
 }
 .animal-label {
     width: 20%;
@@ -266,14 +247,364 @@ body {
 #label-container {
     width: 80%;
     margin: 0 auto;
+    margin-bottom: 5%;
 }
+
+#result-message-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .result-message {
     font-size: 2rem;
 }
 
-
 .MBTI-explain {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+}
+
+.MBTI-celeb {
+    font-size: 1.2rem;
+}
+
+.ISTJ {
+    color: rgba(117, 204, 84, 1);
+}
+.ISTJ-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(117, 204, 84, 1);
+}
+.ISTJ-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(117, 204, 84, 0.2);
+}
+
+.ISFJ {
+    color: rgba(102, 102, 255, 1);
+}
+.ISFJ-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(102, 102, 255, 1);
+}
+.ISFJ-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(102, 102, 255, 0.2);
+}
+
+.INFJ {
+    color: rgba(102, 102, 102, 1);
+}
+.INFJ-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(102, 102, 102, 1);
+}
+.INFJ-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(102, 102, 102, 0.2);
+}
+
+.INTJ {
+    color: rgba(000, 204, 204, 1);
+}
+.INTJ-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(000, 204, 204, 1);
+}
+.INTJ-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(000, 204, 204, 0.2);
+}
+
+.ISTP {
+    color: rgba(255, 190, 255, 1);
+}
+.ISTP-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(255, 190, 255, 1);
+}
+.ISTP-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(255, 190, 255, 0.2);
+}
+
+.ISFP {
+    color: rgba(102, 051, 000, 1);
+}
+.ISFP-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(102, 051, 000, 1);
+}
+.ISFP-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(102, 051, 000, 0.2);
+}
+
+.INFP {
+    color: rgba(153, 102, 204, 1);
+}
+.INFP-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(153, 102, 204, 1);
+}
+.INFP-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(153, 102, 204, 0.2);
+}
+
+.INTP {
+    color: rgba(204, 102, 102, 1);
+}
+.INTP-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(204, 102, 102, 1);
+}
+.INTP-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(204, 102, 102, 0.2);
+}
+
+.ESTP {
+    color: rgba(102, 051, 255, 1);
+}
+.ESTP-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(102, 051, 255, 1);
+}
+.ESTP-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(102, 051, 255, 0.2);
+}
+
+
+
+.ESFP {
+    color: rgba(153, 102, 102, 1);
+}
+.ESFP-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(153, 102, 102, 1);
+}
+.ESFP-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(153, 102, 102, 0.2);
+}
+
+.ENFP {
+    color: rgba(204, 102, 102, 1);
+}
+.ENFP-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(204, 102, 102, 1);
+}
+.ENFP-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(204, 102, 102, 0.2);
+}
+
+.ENTP {
+    color: rgba(102, 153, 255, 1);
+}
+.ENTP-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(102, 153, 255, 1);
+}
+.ENTP-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(102, 153, 255, 0.2);
+}
+
+
+.ESTJ {
+    color: rgba(204, 255, 051, 1);
+}
+.ESTJ-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(204, 255, 051, 1);
+}
+.ESTJ-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(204, 255, 051, 0.2);
+}
+
+.ESFJ {
+    color: rgba(051, 153, 000, 1);
+}
+.ESFJ-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(051, 153, 000, 1);
+}
+.ESFJ-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(051, 153, 000, 0.2);
+}
+
+.ENFJ {
+    color: rgba(153, 051, 102, 1);
+}
+.ENFJ-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(153, 051, 102, 1);
+}
+.ENFJ-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(153, 051, 102, 0.2);
+}
+
+.ENTJ {
+    color: rgba(255, 153, 102, 1);
+}
+
+.ENTJ-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(255, 153, 102, 1);
+}
+.ENTJ-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(255, 153, 102, 0.2);
 }
 
 -animal-title {
@@ -282,87 +613,81 @@ body {
 -animal-title {
     color: #3ba363;
 }
-
-
-
-
-
-
 
 label {
-  cursor: pointer;
-  display: inline-block;
-  width: 90px;
-  height: 41px;
-  box-shadow: 0 0 0 8px #e5e9ea inset;
-  border-radius: 30px;
-  position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 90px;
+    height: 41px;
+    box-shadow: 0 0 0 8px #e5e9ea inset;
+    border-radius: 30px;
+    position: relative;
 }
 
 .knob {
-  position: absolute;
-  width: 41px;
-  top: 0;
-  left: 0;
-  height: 41px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 8px #f470a7 inset;
-  background-color: #fbd4e6;
-  transition: 0.3s;
+    position: absolute;
+    width: 41px;
+    top: 0;
+    left: 0;
+    height: 41px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px #f470a7 inset;
+    background-color: #fbd4e6;
+    transition: 0.3s;
 }
 
 .knob > i {
-  position: absolute;
-  width: 4px;
-  height: 18px;
-  top: 100%;
-  background-color: #f470a7;
-  left: calc(50% - 2px);
+    position: absolute;
+    width: 4px;
+    height: 18px;
+    top: 100%;
+    background-color: #f470a7;
+    left: calc(50% - 2px);
 }
 
 .knob > i:before,
 .knob > i:after {
-  width: 6px;
-  position: absolute;
-  top: 42%;
-  content: "";
-  height: 4px;
-  background-color: #f470a7;
+    width: 6px;
+    position: absolute;
+    top: 42%;
+    content: '';
+    height: 4px;
+    background-color: #f470a7;
 }
 
 .knob > i:before {
-  left: 4px;
+    left: 4px;
 }
 .knob > i:after {
-  left: -6px;
+    left: -6px;
 }
 
 input:checked + label > .knob {
-  box-shadow: 0 0 0 8px #a1c6dd inset;
-  background-color: #e2ecf4;
-  transform: translateX(49px) rotate(-140deg);
+    box-shadow: 0 0 0 8px #a1c6dd inset;
+    background-color: #e2ecf4;
+    transform: translateX(49px) rotate(-140deg);
 }
 
 input:checked + label > .knob > i {
-  background-color: #a1c6dd;
+    background-color: #a1c6dd;
 }
 
 input:checked + label > .knob > i:after,
 input:checked + label > .knob > i:before {
-  background-color: #a1c6dd;
+    background-color: #a1c6dd;
 }
 
 input:checked + label > .knob > i:after {
-  top: 14.5px;
-  width: 12px;
-  left: -7px;
-  transform: rotate(45deg);
+    top: 14.5px;
+    width: 12px;
+    left: -7px;
+    transform: rotate(45deg);
 }
 input:checked + label > .knob > i:before {
-  top: 13px;
-  width: 12px;
-  left: 0px;
-  transform: rotate(134deg);
+    top: 13px;
+    width: 12px;
+    left: 0px;
+    transform: rotate(134deg);
 }
 
 .ad-banner {

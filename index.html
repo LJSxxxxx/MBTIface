@@ -5,11 +5,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>얼굴상 MBTI 테스트</title>
     <link rel="stylesheet" href="style.css">
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed36c34a75a50dd"></script>
@@ -25,18 +27,18 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
+                    <a class="nav-link" href="#">M
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">B</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="#">T</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">I</a>
                 </li>
             </ul>
         </div>
@@ -49,7 +51,9 @@
         <div class="container mt-5 mr-3 youtube-cover d-flex flex-row-reverse">
             <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" target="_blank">
                 <span class="youtube-link">by LJS</span>
-                <br><br><span class="youtube-link-2">제작 도움 : 조코딩 유튜브</span>
+                <br>
+                <br>
+                <span class="youtube-link-2">제작 도움 : 조코딩 유튜브</span>
             </a>
         </div>
     </section>
@@ -72,7 +76,10 @@
                     AI가 당신의 MBTI를 분석중입니다.
                 </p>
             </div>
-            <p class="result-message"></p>
+            <div id="result-message-container">
+                <p class="result-message"></p>
+            </div>
+
             <div id="label-container"></div>
 
             <!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -105,10 +112,12 @@
                     $('.image-title').html(input.files[0].name);
                 };
                 reader.readAsDataURL(input.files[0]);
-                init().then(() => {
+                init().then(function() {
                     console.log("hello");
                     predict();
                     $('#loading').hide();
+                    $('.result-message').show();
+                    $('#label-container').show();
                 });
             } else {
                 removeUpload();
@@ -118,6 +127,8 @@
         function removeUpload() {
             $('.file-upload-input').replaceWith($('.file-upload-input').clone());
             $('.file-upload-content').hide();
+            $('.result-message').hide();
+            $('#label-container').hide();
             $('.image-upload-wrap').show();
         }
         $('.image-upload-wrap').bind('dragover', function() {
@@ -126,6 +137,7 @@
         $('.image-upload-wrap').bind('dragleave', function() {
             $('.image-upload-wrap').removeClass('image-dropping');
         });
+        
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
@@ -149,7 +161,7 @@
             for (let i = 0; i < maxPredictions; i++) { // and class labels
                 var element = document.createElement("div")
                 element.classList.add("d-flex");
-                labelContainer.appendChild(document.createElement("div"));
+                labelContainer.appendChild(element);
             }
         }
         // run the webcam image through the image model
@@ -163,90 +175,90 @@
             switch (prediction[0].className) {
                 case "ISTJ":
                     resultTitle = "ISTJ 세상의 소금형"
-                    resultExplain = "한번 시작한 일은 끝까지 해내는 당신은 엄청난 끈기의 소유자 !"
-                    resultCeleb = ""
+                    resultExplain = "한번 시작한 일은 끝까지 해내는 당신은 엄청난 끈기의 소유자 ..! 한국에서 가장 많은 성격유형이자 선생님들에게 사랑받는 성격 !"
+                    resultCeleb = "ISTJ형 유명인: 마크(GOT7), 정찬우(iKON), 김성규(인피니트), 찬미(AOA), 레옹, 써니"
                     break;
                 case "ISFJ":
                     resultTitle = "ISFJ 비선실세형"
-                    resultExplain = ""
-                    resultCeleb = ""
+                    resultExplain = "성실하고 온화하며 협조를 잘하지만, 사실은 뒤에서 실질적인 권력을 쥐고 있는 당신은 비선실세 ..! 친구나 지인으로써 가장 믿음직스러운 성격 !"
+                    resultCeleb = "ISFJ형 유명인: 최강창민, 주호민, 도영(NCT), 예지(ITZY), 나르샤, 진솔(이달의 소녀)"
                     break;
                 case "INFJ":
                     resultTitle = "INFJ 예언자형"
-                    resultExplain = ""
-                    resultCeleb = ""
+                    resultExplain = "사람에 관해 놀랄만큼 뛰어난 통찰력을 가지고 있는 당신은 예언자 ..! 인구의 채 1%도 되지 않는 흔치 않은 성격 !"
+                    resultCeleb = "INFJ형 유명인: 태연, 김이나, 솔라, 레오(빅스), 카이(엑소), 넬슨 만델라"
                     break;
                 case "INTJ":
                     resultTitle = "INTJ 과학자형"
-                    resultExplain = ""
-                    resultCeleb = ""
+                    resultExplain = "전세계 인구의 단 2%에 속하는 당신, 상상력이 풍부하고, 야망이 있지만 대외적으로 표현하지 않는군요 ..! 호기심이 많지만 쓸데없는 데 에너지를 낭비하지 않는 성격 !"
+                    resultCeleb = "INTJ형 유명인: 강동원, 마크 저커버그, 일론 머스크, 류진(ITZY), 손나은, 김유정"
                     break;
                 case "ISTP":
                     resultTitle = "ISTP 백과사전형"
-                    resultExplain = ""
-                    resultCeleb = ""
+                    resultExplain = "냉철한 이성주의 성향과 왕성한 호기심이 합쳐진 당신은 백과사전과 같습니다 ..! 모든 성격 유형 중 최고의 승부사이며 벼락치기에 능한 편 !"
+                    resultCeleb = "ISTP형 유명인: 김기정(기생충), 김연아, 전지현, 박명수, 장성규, 마이클 조던"
                     break;
                 case "ISFP":
                     resultTitle = "ISFP 성인군자형"
-                    resultExplain = ""
-                    resultCeleb = ""
+                    resultExplain = "조용하고 온화하며 또 친절한 당신은 성인군자 ..! 의외로 가끔 충동적인 면을 보여주어 갑자기 학교나 직장을 그만둬버릴지도 !"
+                    resultCeleb = "ISFP형 유명인: 유재석, 백현, 마이클 잭슨, 슬기, 설현, 쯔위"
                     break;
                 case "INFP":
                     resultTitle = "INFP 잔다르크형"
-                    resultExplain = ""
-                    resultCeleb = ""
+                    resultExplain = "정열적이고 낭만적인 당신, 완벽주의 경향이 있는 이상주의자입니다 ..! 감정적인 편이며, 자신에 대한 사랑이 넘칩니다 !"
+                    resultCeleb = "INFP형 유명인: 정국, 키드밀리, 셰익스피어, 아린(오마이걸), 백예린, 이나은"
                     break;
                 case "INTP":
                     resultTitle = "INTP 아이디어 뱅크형"
-                    resultExplain = ""
-                    resultCeleb = ""
+                    resultExplain = "비평적인 관점을 가진 뛰어난 전략가 ..! 조용하지만 논리적이며, MBTI유형 중 평균 IQ가 가장 높아 '게으른 천재'가 많다 !"
+                    resultCeleb = "INTP형 유명인: 진(방탄), 슈가, 기안84, 휘인, 정은지, 타일러 라쉬"
                     break;
                 case "ESTP":
                     resultTitle = "ESTP 수완좋은 활동가형"
-                    resultExplain = ""
-                    resultCeleb = ""
+                    resultExplain = "스릴을 즐기며, 직접 몸으로 부딪히며 체험하고 해결하기 좋아하는 당신은 모험을 즐기는 활동가 ..! 예쁜 여자나 잘생긴 남자와 연애를 할 확률이 높고 친구들이 좋아하는 인싸 성격 !"
+                    resultCeleb = "ESTP형 유명인: 태현(TXT), 재현(NCT), 정일훈(비투비), 전혜빈, 마돈나"
                     break;
                 case "ESFP":
-                    resultTitle = "ESFP 사교가형"
-                    resultExplain = ""
-                    resultCeleb = ""
+                    resultTitle = "ESFP 연예인형"
+                    resultExplain = "사교적이고 활동적이며 관심을 즐기는 관종 인싸같은 성격의 당신 ..! 유쾌한 분위기메이커인 동시에 많은 사람들이 고민을 털어놓는 따뜻한 사람 !"
+                    resultCeleb = "ESFP형 유명인: 조쉬(영국남자), 배진영, 알라딘, 자스민, 미야자키 미호(AKB48), 수영(소녀시대)"
                     break;
                 case "ENFP":
                     resultTitle = "ENFP 스파크형"
-                    resultExplain = ""
-                    resultCeleb = ""
+                    resultExplain = "자유로운 사고의 소유자인 당신, 주변 사람과 깊은 관계를 맺으며 행복을 느끼는군요 ..! 쉽게 싫증을 느껴 일을 많이 벌리는 경향이 있는 성격 !"
+                    resultCeleb = "ENFP형 유명인: 노무현, 옹성우, 공주영(연애혁명), 화사, 전소미, 홍진영"
                     break;
                 case "ENTP":
-                    resultTitle = "ENTP 발명가형"
-                    resultExplain = ""
-                    resultCeleb = ""
+                    resultTitle = "ENTP 변론가형"
+                    resultExplain = "다방면에 박식하고 재능이 많은 당신, 새로운 도전을 즐기는 것 같군요 ..! 머리가 좋지만 꾸준한 노력이 부족해 하드웨어와 아웃풋의 격차가 가장 큰 성격이기도 하다는군요 !"
+                    resultCeleb = "ENTP형 유명인: 정혁, 육성재, 박경, 설리, 라미란, 이수민"
                     break;
                 case "ESTJ":
                     resultTitle = "ESTJ 사업가형"
-                    resultExplain = ""
-                    resultCeleb = ""
+                    resultExplain = "리더쉽이 뛰어나 사람들을 조직하고 일을 추진해 나가는 능력이 뛰어난 당신 ..! 현실적이고 계획이 틀어지는 것을 싫어하는 성격 !"
+                    resultCeleb = "ESTJ형 유명인: 뱀뱀, 김준수(JYJ), 허경영, 한채영, 김립(이달의 소녀)"
                     break;
                 case "ESFJ":
                     resultTitle = "ESFJ 우호적인 인싸형"
-                    resultExplain = ""
-                    resultCeleb = ""
+                    resultExplain = "타고난 인기쟁이로써 주변 사람들에게 관심을 쏟는 당신, 사소한 것을 잘 기억해주며 약자들을 잘 돕는군요 ..! 리액션이 좋으며 다른 사람의 평가에 민감한 성격 !"
+                    resultCeleb = "ESFJ형 유명인: 규현, 제이홉, 빌 클린턴, 혜리, 효정(오마이걸), 채령(ITZY)"
                     break;
                 case "ENFJ":
                     resultTitle = "ENFJ 언변능숙형"
-                    resultExplain = ""
-                    resultCeleb = ""
+                    resultExplain = "충만한 열정을 지닌 타고난 리더형의 당신, 동정심이 많고 참을성이 많군요 ..! 가장 희귀한 성격 중에 하나지만 특이하게도 한국 아이돌 중 3~40%가 ENFJ라고 하는군요 !"
+                    resultCeleb = "ENFJ형 유명인: 지민, 강다니엘, 찬열, 유주(여자친구), 리아, 유나"
                     break;
                 case "ENTJ":
                     resultTitle = "ENTJ 지도자형"
-                    resultExplain = ""
-                    resultCeleb = ""
+                    resultExplain = "카리스마와 자신감으로 다른 이들을 이끄는 당신, 타고난 지도자입니다 ..! 논리적으로 계획하고 체계적으로 추진해 나가지만, 다른 사람의 의견과 감정에 주의할 필요가 있는 성격 !"
+                    resultCeleb = "ENTJ형 유명인: 스티브 잡스, 김일성, 지코, 고든 램지, 티파니 영"
                     break;
                 default:
                     resultmessage = "알수없음"
             }
-            var title = "<div class='" + prediction[0].className + "-MBTI-title'>" + resultTitle + "</div>"
+            var title = "<div class='" + prediction[0].className + "-MBTI-title " + prediction[0].className + "'>" + resultTitle + "</div>"
             var explain = "<div class='MBTI-explain pt-2'>" + resultExplain + "</div>"
-            var celeb = "<div class='" + prediction[0].className + "-MBTI-celeb pt-2 pb-2'>" + resultCeleb + "</div>"
+            var celeb = "<div class='MBTI-celeb " + prediction[0].className + " pt-2 pb-2'>" + resultCeleb + "</div>"
             $('.result-message').html(title + explain + celeb);
             var barwidth;
             for (let i = 0; i < 5; i++) {
