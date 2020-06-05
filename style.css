@@ -141,6 +141,10 @@ body {
     transition: all 0.2s ease;
 }
 
+.nav-link {
+    font-size: 0.3rem;
+}
+
 .nav-distance {
     padding: 2.1% 7.7%;
 }
